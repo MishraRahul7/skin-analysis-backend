@@ -15,6 +15,7 @@ router.post('/user/add', async (req, res) => {
 });
 
 router.get('/user/view', async (req, res) => {
-  res.status(201).send(req.user);
+  const user=await User.find(req.body);
+  res.send(user);
 });
 module.exports = router;
